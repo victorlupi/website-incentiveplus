@@ -1,10 +1,10 @@
 "use client";
-
 import Image from "next/image";
 import womanIndex from "@/../public/business-finance-employment-female-successful-entrepreneurs-concept-confident-smiling-asian-businesswoman-office-worker-white-suit-glasses-using-laptop-help-clients 1.png";
 import about from "@/../public/about.png";
 import GradientUnderline from "./components/Gradient/GradientUnderline";
 import GradientButton from "./components/Gradient/GradientButton";
+import GradientServices from "./components/Gradient/GradientServices";
 
 export default function Home() {
   return (
@@ -22,6 +22,11 @@ export default function Home() {
           <GradientUnderline>sucesso!</GradientUnderline>
         </h1>
       </div>
+
+      <div className="flex justify-center items-center">
+        <GradientServices>asdasd</GradientServices>
+      </div>
+
       <div>
         <Image
           src={about}
