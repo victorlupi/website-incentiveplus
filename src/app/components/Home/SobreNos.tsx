@@ -5,16 +5,17 @@ import GradientButton from "../Gradient/GradientButton";
 
 export default function SobreNos() {
   return (
-    <div className="flex flex-col md:flex-row items-center py-[20rem] px-20">
+    <div className="flex flex-col items-center"> 
+    <div className="flex flex-col md:flex-row items-center pt-[18rem] px-8 pb-16 md:px-20">
       <Image
         src={about}
         alt="Mulher com notebook"
-        width={304.73}
+        width={400}
         height={303}
         className="w-1/2 md:w-1/3 m-auto"
       />
       <div className="md:w-2/3 md:ml-4 text-center md:text-left">
-        <h2 className="md:text-4xl font-black text-incentive-blue text-xl">
+        <h2 className="text-3xl md:text-4xl font-black text-incentive-blue p-2">
           Sobre nós
         </h2>
         <GradientButton onClick={() => alert("Botão clicado!")}>
@@ -28,6 +29,7 @@ export default function SobreNos() {
           para crescer e que cada um tem necessidades individuais para isso.
         </p>
       </div>
+    </div>
     </div>
   );
 }

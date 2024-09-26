@@ -16,19 +16,19 @@ export default function Home() {
   return (
     <main>
       <Carrossel />
-      <SobreEmpresa></SobreEmpresa>
-      <div className="flex justify-center items-center">
+       <SobreEmpresa></SobreEmpresa>
+      {/* <div className="flex justify-center items-center">
         <GradientServices>asdasd</GradientServices>
-      </div>
+      </div> */}
       <NossosServicos2 />
-      <SobreNos />
-      <Lifes />
+     <SobreNos />
+       <Lifes />
       <Depoimentos />
       <Card />
       <NossosServicos />
       <BlogSession />
       <ContactSection />
-      <Footer />
+      <Footer /> 
     </main>
   );
 }

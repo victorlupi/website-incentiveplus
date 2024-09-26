@@ -31,10 +31,10 @@ export default function ComponenteComBackground() {
   return (
     <div className="relative bg-contain bg-no-repeat w-full h-[400px] bg-center " >
       <Image src="/images/fundoOnda.png" alt="Fundo Onda" width={400} height={400} className="absolute inset-0 w-full h-auto object-contain " />
-      <div className="absolute inset-0 flex items-center justify-center pt-[270px]">
+      <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center pt-[270px] px-4 md:px-8">
        
-          <h1 className="text-4xl font-bold text-[rgb(1,24,74)] text-center pr-10">Nossos<br></br> serviços</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h1 className="text-4xl font-bold text-[rgb(1,24,74)] text-center pr-10 pb-6">Nossos<br></br> serviços</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
             {items.map((item, index) => (
               <div key={index} className="flex items-start p-4 bg-white rounded-lg shadow-md">
                 <div className="w-16 h-16 flex items-center justify-center mr-4">

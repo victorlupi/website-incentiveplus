@@ -4,8 +4,8 @@ import womanIndex from "@/../public/business-finance-employment-female-successfu
 
 export default function SobreEmpresa() {
   return (
-    <div className="flex flex-col md:flex-row md:items-center md:justify-center">
-      <div className="md:w-1/2 flex justify-center mb-4 md:mb-0 pl-20">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-center pt-20">
+      <div className="md:w-1/2 flex justify-center mb-4 md:mb-0 md:pl-20">
         <Image
           src={womanIndex}
           alt="Mulher com notebook"
@@ -16,7 +16,7 @@ export default function SobreEmpresa() {
       </div>
 
       <div className="md:w-1/2">
-        <h1 className="md:text-5xl font-black text-incentive-blue text-xl text-center md:text-left ">
+        <h1 className="text-3xl md:text-5xl font-black text-incentive-blue text-center md:text-left ">
           Uma empresa<br className="pb-12"/>
           que ajuda a sua<br />
           a encontrar o<br />

@@ -5,7 +5,7 @@ const Lifes = () => {
     return (
         <div className='relative w-full h-[200px] py-10'>
             <Image 
-                src="/fundo-gradient.png" 
+                src="/images/fundoGradient.png" 
                 alt="Mais de 3000 vidas" 
                 width={1400} 
                 height={226} 

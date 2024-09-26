@@ -33,10 +33,10 @@ export default function ContactSection() {
       style={{ backgroundImage: `url(${fundoContato.src})` }}
     >
       <div className="absolute inset-0"></div>
-      <div className="relative z-10 max-w-6xl mx-auto p-6 flex items-center h-full">
+      <div className="relative z-10 max-w-6xl mx-auto p-6 flex flex-col md:flex-row items-center h-full">
         <div className="flex-1 pr-6">
-          <h2 className="text-4xl font-bold text-white mb-8 text-center">Entre em<br></br> Contato</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Entre em<br></br> Contato</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 mb-10">
             {images.map((image, index) => (
               <div key={index} className="flex items-start">
                 <Image
@@ -51,7 +51,7 @@ export default function ContactSection() {
             ))}
           </div>
         </div>
-        <div className="flex-none w-full md:w-1/2 pt-[12rem]">
+        <div className="flex w-full  md:w-1/2 pt-6 md:pt-[12rem]">
           <FormContact />
         </div>
       </div>

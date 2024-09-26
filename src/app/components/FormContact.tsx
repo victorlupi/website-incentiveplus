@@ -11,7 +11,7 @@ export default function FormContact() {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -19,7 +19,7 @@ export default function FormContact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log("Formulário enviado:", formData);
     alert("Formulário enviado com sucesso!");
