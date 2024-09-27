@@ -28,9 +28,11 @@ function NewsCard({ image, title, description }: NewsCardProps) {
 
 export default function Blog() {
   return (
-    <div className="max-w-6xl mx-20 p-4">
-        <button className="bg-red-500 text-white font-bold py-2 px-4 rounded">Blog</button>
-      <h1 className="text-3xl font-bold mb-8">Destaques da semana</h1>
+    <div className="max-w-6xl md:mx-20 pb-10 p-4 ">
+      <div className=" flex items-center justify-center pb-4">
+        <button className="bg-incentive-blue text-white font-bold py-2 px-4 rounded">Blog</button>
+        </div>
+      <h1 className="text-3xl text-center font-bold mb-8">Destaques da semana</h1>
       {/* Card destacado */}
       <div className="bg-gray-100 rounded-lg shadow-xl flex p-6 mb-8">
         <Image src={blogPrincipal} alt="Notícia em destaque" className="w-1/2 h-auto rounded-lg" />

@@ -47,8 +47,8 @@ const Header = () => {
   return (
     <header className="text-white p-8 absolute top-0 left-0 w-full z-30">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="bg-white rounded-full ">
-        <Image src="/images/logo3.png" alt="Logo" width={200} height={100} className="text-2xl font-bold" />
+        {/* <div className="bg-white rounded-full "> */}
+        <Image src="/images/logo3.png" alt="Logo" width={200} height={100} className="w-[100px] absolute top-2 left-4" />
         </div>
         {/* Botão do Menu Hamburger */}
         <button 
@@ -80,7 +80,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      {/* </div> */}
     </header>
   );
 };

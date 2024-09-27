@@ -255,8 +255,9 @@ function ServiceBlock({
           ))}
         </div>
         <hr />
-        <div className="pt-6">
+        <div className="py-6 ">
           <Button
+          
             ariaLabel="Saiba mais!"
             handleClick={() => alert("Saiba mais!")}
             type="primary"
@@ -272,13 +273,13 @@ function ServiceBlock({
 
       export default function NossosServicos() {
   return (
-      <div className="px-20">
+      <div className="px-2 sm:px-4 md:px-20">
         <div className="text-center">
           <GradientButton onClick={() => alert("Botão clicado!")}>
             Serviços
           </GradientButton>
         </div>
-        <h2 className="md:text-4xl font-black text-incentive-blue text-xl text-center mb-6">
+        <h2 className="md:text-5xl font-black text-incentive-blue text-3xl text-center pt-6 mb-6">
           Nossos Serviços
         </h2>
 
