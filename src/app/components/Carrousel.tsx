@@ -2,32 +2,34 @@
 'use client';
 import { useState } from 'react';
 import Header from './Header';
+import GradientUnderline from './Gradient/GradientUnderline';
+import Image from 'next/image';
 
 const banners = [
     {
         imageSmall: '/images/imageCell.png',
         imageLarge: '/images/banner1.png',
         title: 'Banner 1',
-        description: (<>Faça seus projetos<br />saírem do papel <br />com nosso serviço de<br /> financiamento coletivo </>),
+        description: (<>Faça <b>seus projetos<br />saírem do papel</b> <br />com nosso serviço de <br /> <GradientUnderline><b>financiamento </b></GradientUnderline>coletivo </>),
     },
     {
         imageSmall: '/images/imageCell.png',
         imageLarge: '/images/banner2.png',
         title: 'Banner 2',
-        description: (<>Soluções especiais<br /> para sua saúde e bem estar <br />juntas em um só lugar!</>),
+        description: (<><b>Soluções especiais</b> <br /> para sua <GradientUnderline><b>saúde e bem estar </b></GradientUnderline><br /><b>juntas em um só lugar!</b></>),
     },
     {
         imageSmall: '/images/imageCell.png',
         imageLarge: '/images/banner3.png',
         title: 'Banner 3',
-        description: (<>Tenha acesso a nossa<br /> plataforma de benefícios únicos<br /> com mais de 200 parceiros<br /> espalhados pelo Brasil! </>),
+        description: (<>Acesse a nossa<br /><b> plataforma de benefícios</b><br /> com mais de <GradientUnderline> <b>200</b> </GradientUnderline><b>parceiros</b><br /> <b>espalhados pelo Brasil!</b> </>),
     },
     {
         imageSmall: '/images/imageCell.png',
         imageLarge: '/images/banner4.png',
         title: 'Banner 4',
         description: (<>
-            <b className='font-bold'>Venda mais<br /> gastando menos<br /></b> com nossas <b>campanhas<br /> de incentivo</b>
+            <b>Venda </b><GradientUnderline><b> mais </b></GradientUnderline><br /><b> gastando menos</b><br /> com nossas <b>campanhas<br /> de incentivo</b>
         </>),
     },
 ];
@@ -46,11 +48,12 @@ const Carrossel = () => {
     };
 
     return (
-        <div className="relative w-full max-w-full mx-auto overflow-hidden">
+        <div className="relative w-full max-w-full mx-auto overflow-hidden ">
+            <Image src='/images/logo3.png' alt="logo" width={200} height={200} className="w-[100px] md:w-[200px] absolute inset-0 z-[200] left-4 top-4" />
             <Header />
-            <div className="flex transition-transform ease-out duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            <div className="flex transition-transform ease-out duration-500 text-[rgb(1,24,74)]" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {banners.map((banner, index) => (
-                    <div key={index} className="min-w-full h-[500px] relative bg-white">
+                    <div key={index} className="min-w-full h-[500px] relative bg-[rgb(255,255,255)]">
                         {/* <img
                             src={banner.image}
                             alt={banner.title}
@@ -58,7 +61,7 @@ const Carrossel = () => {
                         /> */}
                         <div className="absolute inset-0 " />
                         <div className={`absolute w-full md:w-1/2 inset-0 flex flex-col items-center md:items-start justify-center md:text-left`}>
-                            <p className="ml-6 md:ml-14 lg:ml-20 xl:ml-[120px] pb-[200px] md:pb-0 text-xl md:text-3xl text-[rgb(1,24,74)] z-10">{banner.description}</p>
+                            <p className="px-4 text-2xl  ml-6 md:ml-14 lg:ml-20 xl:ml-[120px] md:leading-[1.2] pb-[200px] md:pb-0 md:text-4xl text-[rgb(1,24,74)] z-10 ">{banner.description}</p>
                         </div>
                         <div className="flex-1 md:flex-shrink-0 hidden md:block">
                             <img
@@ -81,18 +84,23 @@ const Carrossel = () => {
             </div>
 
             {/* Botões Laterais */}
-            <button
-                onClick={prevSlide}
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 text-white"
-            >
-                &#10094;
-            </button>
-            <button
-                onClick={nextSlide}
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 text-white"
-            >
-                &#10095;
-            </button>
+            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 shadow-lg">
+                <button
+                    onClick={prevSlide}
+                    className="p-2 text-[rgb(1,24,74)]"
+                >
+                    &#10094;
+                </button>
+            </div>
+
+            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 shadow-lg">
+                <button
+                    onClick={nextSlide}
+                    className="p-2 text-[rgb(1,24,74)]"
+                >
+                    &#10095;
+                </button>
+            </div>
 
             {/* Indicadores */}
             <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">

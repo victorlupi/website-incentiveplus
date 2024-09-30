@@ -284,7 +284,7 @@ function ServiceBlock({
         </h2>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-incentive-blue">
           <ServiceBlock
 
             icon={iconMarketing}

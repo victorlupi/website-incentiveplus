@@ -32,9 +32,9 @@ export default function Blog() {
       <div className=" flex items-center justify-center pb-4">
         <button className="bg-incentive-blue text-white font-bold py-2 px-4 rounded">Blog</button>
         </div>
-      <h1 className="text-3xl text-center font-bold mb-8">Destaques da semana</h1>
+      <h1 className="text-3xl text-center font-bold mb-8 text-incentive-blue">Destaques da semana</h1>
       {/* Card destacado */}
-      <div className="bg-gray-100 rounded-lg shadow-xl flex p-6 mb-8">
+      <div className="bg-gray-100 rounded-lg shadow-xl flex p-6 mb-8 text-incentive-blue">
         <Image src={blogPrincipal} alt="Notícia em destaque" className="w-1/2 h-auto rounded-lg" />
         <div className="ml-4 w-1/2">
           <h2 className="text-2xl font-bold">Notícia em Destaque</h2>
@@ -45,7 +45,7 @@ export default function Blog() {
       </div>
 
       {/* Cards de notícias */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-incentive-blue">
         <NewsCard
           image={blog1}
           title="Notícia 1"

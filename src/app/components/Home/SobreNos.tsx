@@ -15,13 +15,13 @@ export default function SobreNos() {
         className="w-1/2 md:w-1/3 m-auto"
       />
       <div className="md:w-2/3 md:ml-4 text-center md:text-left">
-        <h2 className="text-3xl md:text-4xl font-black text-incentive-blue p-4">
+        <h1 className="text-3xl lg:text-5xl font-black text-incentive-blue p-4">
           Sobre nós
-        </h2>
+        </h1>
         <GradientButton onClick={() => alert("Botão clicado!")}>
           Sobre nós
         </GradientButton>
-        <p className="mt-4 max-w-[400px]">
+        <p className="mt-4 max-w-[400px] text-incentive-blue">
           A <span className="font-bold">Incentive Plus</span> nasceu do propósito
           de trazer diversas <b>soluções com o foco no crescimento e desenvolvimento</b>
           

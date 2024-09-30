@@ -3,13 +3,13 @@ import React from 'react';
 
 const Lifes = () => {
     return (
-        <div className='relative w-full h-[200px] py-10'>
+        <div className='relative w-full h-[300px] py-10'>
             <Image 
                 src="/images/fundoGradient.png" 
                 alt="Mais de 3000 vidas" 
                 width={1400} 
                 height={226} 
-                className="w-full h-auto" 
+                className="w-full h-[300px] object-cover" 
             />
             <div className='absolute inset-0 flex flex-col items-center justify-center'>
                 <h1 className='text-5xl font-bold text-white text-center pt-16'>+3000<br></br> vidas alcançadas</h1>

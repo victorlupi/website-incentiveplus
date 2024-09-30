@@ -16,7 +16,7 @@ export default function SobreEmpresa() {
       </div>
 
       <div className="md:w-1/2">
-        <h1 className="text-3xl md:text-5xl font-black text-incentive-blue text-center md:text-left ">
+        <h1 className="text-3xl md:text-5xl font-black text-incentive-blue text-center md:text-left md:leading-[1.1]">
           Uma empresa<br className="pb-12"/>
           que ajuda a sua<br />
           a encontrar o<br />
