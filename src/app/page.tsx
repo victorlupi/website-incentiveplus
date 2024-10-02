@@ -15,6 +15,7 @@ import NossosServicos2 from "./components/Home/NossosServicos2";
 export default function Home() {
   return (
     <main>
+      
       <Carrossel />
        <SobreEmpresa></SobreEmpresa>
       {/* <div className="flex justify-center items-center">

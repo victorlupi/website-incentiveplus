@@ -37,8 +37,8 @@ const Page = () => {
     };
 
     const displayedCards = cards.slice((currentPage - 1) * 6, currentPage * 6);
-    const [isOpen, setIsOpen] = useState(false);
 
+    const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -56,25 +56,35 @@ const Page = () => {
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
+                        
                     </button>
 
-                    {/* Menu */}
-                    <nav className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center w-full md:w-auto`}>
-                        <ul className={`flex flex-col md:flex-row items-center justify-center md:space-x-2 ${isOpen ? 'bg-gray-800 md:bg-transparent absolute top-16 left-0 w-full' : ''}`}>
+        
+                   {/* Menu */}
+                    <nav className={`md:flex md:items-center w-full md:w-auto ${isOpen ? 'fixed top-0 left-0 w-full h-full bg-incentive-blue  z-40' : 'hidden'}`}>
+                        <div className="absolute top-4 right-4">
+                            <button
+                                onClick={toggleMenu}
+                                className="md:hidden text-red-500 border px-2 rounded-full text-3xl focus:outline-none"
+                            >
+                                &times; {/* Ícone de fechar */}
+                            </button>
+                        </div>
+                        <ul className={`flex flex-col items-center justify-center h-full space-y-4 ${isOpen ? '' : 'hidden'}`}>
                             <li>
-                                <Link href="/Incentivo" className="block px-2 py-2 hover:text-blue-200">Marketing<br />de Incentivo</Link>
+                                <Link href="/Incentivo" className="block text-white text-2xl hover:text-blue-200">Marketing<br />de Incentivo</Link>
                             </li>
                             <li>
-                                <Link href="https://incentivecuidandodevidas.incentiveplus.com.br/" className="block px-1 py-2 hover:text-blue-200">Cuidando<br />de Vida</Link>
+                                <Link href="https://incentivecuidandodevidas.incentiveplus.com.br/" className="block text-white text-2xl hover:text-blue-200">Cuidando<br />de Vida</Link>
                             </li>
                             <li>
-                                <Link href="/Blog" className="block px-1 py-2 hover:text-blue-200">Blog</Link>
+                                <Link href="/Blog" className="block text-white text-2xl hover:text-blue-200">Blog</Link>
                             </li>
                             <li>
-                                <Link href="#" className="block px-1 py-2 hover:text-blue-200">Sobre Nós</Link>
+                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Sobre Nós</Link>
                             </li>
                             <li>
-                                <Link href="#" className="block px-1 py-2 hover:text-blue-200">Contato</Link>
+                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Contato</Link>
                             </li>
                         </ul>
                     </nav>

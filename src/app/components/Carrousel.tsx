@@ -49,8 +49,12 @@ const Carrossel = () => {
 
     return (
         <div className="relative w-full max-w-full mx-auto overflow-hidden ">
-            <Image src='/images/logo3.png' alt="logo" width={200} height={200} className="w-[100px] md:w-[200px] absolute inset-0 z-[200] left-4 top-4" />
-            <Header />
+            {/* <Image src='/images/logo3.png' alt="logo" width={200} height={200} className="w-[100px] md:w-[200px] absolute inset-0 z-[200] left-4 top-4" /> */}
+            <Header
+                logoSrc="/images/logo3.png"
+                textColor="text-white"
+                
+            />
             <div className="flex transition-transform ease-out duration-500 text-[rgb(1,24,74)]" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {banners.map((banner, index) => (
                     <div key={index} className="min-w-full h-[500px] relative bg-[rgb(255,255,255)]">
