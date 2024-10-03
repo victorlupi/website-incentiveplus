@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ textColor }) => {
   };
 
   return (
-    <header className={`pt-2 absolute top-0 right-10 md:right-10 xl:right-8 max-w-[70%] z-30 justify-center`}>
+    <header className={`pt-2 absolute top-4 right-10 md:right-[140px] xl:right-[140px] max-w-[70%] z-30 justify-center`}>
       <div className="flex justify-center md:items-right">
         {/* Exibe o logo se necessário */}
         {/* <Image src={logoSrc} alt="Logo" width={200} height={100} /> */}
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ textColor }) => {
       </div>
 
       {/* Menu */}
-      <nav className={`${isOpen ? 'fixed top-0 text-center left-0 w-full h-full bg-incentive-blue z-40' : 'hidden'} md:flex md:w-[50%] md:right-0 md:items-right md:justify-top`}>
+      <nav className={`${isOpen ? 'fixed top-0 text-center left-0 w-full h-full bg-white z-40' : 'hidden'} md:flex md:w-[50%] md:right-0 md:items-right md:justify-top`}>
         {/* Botão de fechar visível apenas em telas menores */}
         <div className="absolute top-4 right-4 md:hidden">
           <button

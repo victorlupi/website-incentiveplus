@@ -1,18 +1,13 @@
 'use client';
 import Image from 'next/image';
-import React, { useState } from 'react';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-// import Header from '../components/Header';
-import { url } from 'inspector';
 import GradientUnderline from '../components/Gradient/GradientUnderline';
 import Link from 'next/link';
+import Header from '../components/Header';
 
 const Page = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+
     return (
         <>
             <div className="relative w-full h-[437px]">
@@ -22,52 +17,10 @@ const Page = () => {
                     layout="fill"
                     className="object-cover"
                 />
-                <Link href="/" className="absolute inset-0 z-[100]">
+                <Link href="/" className="absolute inset-0">
                 <Image src='/images/logoB.png' alt="logo" width={200} height={200} className="w-[100px] md:w-[200px] absolute inset-0 z-[200] left-4 top-4" />
                 </Link>
-                <header className="text-incentive-blue p-4 absolute top-0 right-[80px] lg:right-[140px] w-2/2 z-30">
-                <div className="mx-auto flex justify-between items-right">
-                    {/* Botão do Menu Hamburger */}
-                    <button
-                        className="md:hidden focus:outline-none text-black absolute top-[30px] right-[-35px]"
-                        onClick={toggleMenu}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-
-                    {/* Menu */}
-                   {/* Menu */}
-                   <nav className={`md:flex md:items-center w-full md:w-auto ${isOpen ? 'fixed top-0 left-0 w-full h-full bg-incentive-blue  z-40' : 'hidden'}`}>
-                        <div className="absolute top-4 right-4">
-                            <button
-                                onClick={toggleMenu}
-                                className="text-red-500 border px-2 rounded-full text-3xl focus:outline-none"
-                            >
-                                &times; {/* Ícone de fechar */}
-                            </button>
-                        </div>
-                        <ul className={`flex flex-col items-center justify-center h-full space-y-4 ${isOpen ? '' : 'hidden'}`}>
-                            <li>
-                                <Link href="/Incentivo" className="block text-white text-2xl hover:text-blue-200">Marketing<br />de Incentivo</Link>
-                            </li>
-                            <li>
-                                <Link href="https://incentivecuidandodevidas.incentiveplus.com.br/" className="block text-white text-2xl hover:text-blue-200">Cuidando<br />de Vida</Link>
-                            </li>
-                            <li>
-                                <Link href="/Blog" className="block text-white text-2xl hover:text-blue-200">Blog</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Sobre Nós</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Contato</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+               <Header  textColor="text-white" />
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
                     <h1 className="text-4xl font-bold pb-4 ">Marketing de Incentivo</h1>

@@ -1,4 +1,4 @@
-import GradientServices from "./components/Gradient/GradientServices";
+
 import Card from "./components/Home/Depoimento/Card";
 
 import Depoimentos from "./components/Home/Depoimentos";

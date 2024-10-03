@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../../components/Footer';
-import { useState } from 'react';
+import HeaderBranco from '@/app/components/HeaderBranco';
 
 const CardDetail = () => {
     const { id } = useParams();
@@ -16,72 +16,29 @@ const CardDetail = () => {
 
     ];
 
-    const card = cards.find(card => card.id === parseInt(id));
+    const card = cards.find(card => card.id === parseInt(Array.isArray(id) ? id[0] : id));
+
 
     if (!card) {
         return <p>Card não encontrado!</p>;
     }
 
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
     return (
         <>
-            <Image src='/images/logo3.png' alt='Imagem do Blog' width={200} height={200} className='absolute top-3 left-[40px] lg:left-20' />
-            <header className="text-incentive-blue p-4 absolute top-0 right-[80px] lg:right-[140px] w-2/2 z-30">
-                <div className="mx-auto flex justify-between items-right">
-                    {/* Botão do Menu Hamburger */}
-                    <button
-                        className="md:hidden focus:outline-none text-black absolute top-[30px] right-[-35px]"
-                        onClick={toggleMenu}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-
-                    {/* Menu */}
-                    <nav className={`md:flex md:items-center w-full md:w-auto ${isOpen ? 'fixed top-0 left-0 w-full h-full bg-incentive-blue  z-40' : 'hidden'}`}>
-                        <div className="absolute top-4 right-4">
-                            <button
-                                onClick={toggleMenu}
-                                className="text-red-500 border px-2 rounded-full text-3xl focus:outline-none"
-                            >
-                                &times; {/* Ícone de fechar */}
-                            </button>
-                        </div>
-                        <ul className={`flex flex-col items-center justify-center h-full space-y-4 ${isOpen ? '' : 'hidden'}`}>
-                            <li>
-                                <Link href="/Incentivo" className="block text-white text-2xl hover:text-blue-200">Marketing<br />de Incentivo</Link>
-                            </li>
-                            <li>
-                                <Link href="https://incentivecuidandodevidas.incentiveplus.com.br/" className="block text-white text-2xl hover:text-blue-200">Cuidando<br />de Vida</Link>
-                            </li>
-                            <li>
-                                <Link href="/Blog" className="block text-white text-2xl hover:text-blue-200">Blog</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Sobre Nós</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Contato</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-            <div className="container mx-auto py-10 flex flex-col items-center pt-20 mb-[-300px]">
+        <HeaderBranco textColor='white'/>
+        <Link href="/">
+            <Image src='/images/logo3.png' alt='Imagem do Blog' width={200} height={200} className='absolute top-3 left-[40px] lg:left-[130px]' />
+           </Link>
+            <div className="container mx-auto lg:pb-[120px] flex flex-col items-center pt-20 mb-[-300px]">
                 {/* Imagem principal centralizada */}
-                <Image src={card.imageSrc} alt={card.title} width={1200} height={600} className="rounded-md mb-8 w-[80%] h-[380px]" />
+                <Image src={card.imageSrc} alt={card.title} width={1200} height={600} className="rounded-md mb-8 w-[95%] h-[380px]" />
 
                 {/* Seção de conteúdo */}
                 <div className="w-full flex flex-col xl:flex-row gap-8 px-4 xl:px-16">
                     {/* Textos descritivos à esquerda */}
                     <div className="flex-1">
                         <h1 className="text-4xl font-bold mb-4">{card.title}</h1>
-                        <p className="text-gray-500 mb-2">{`Publicado em: ${card.date} por ${card.author}`}</p>
+                        <p className="text-gray-500 mb-2">02/02/2024</p>
                         <p className="mt-4 text-lg leading-relaxed">{card.description}</p>
                         {card.description2 && (
                             <p className="mt-2 text-lg leading-relaxed">{card.description2}</p>

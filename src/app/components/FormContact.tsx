@@ -11,7 +11,7 @@ export default function FormContact() {
     message: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -19,7 +19,7 @@ export default function FormContact() {
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Formulário enviado:", formData);
     alert("Formulário enviado com sucesso!");
@@ -107,7 +107,7 @@ export default function FormContact() {
             onChange={handleChange}
             required
             className="w-full p-2 border rounded"
-            rows="3"
+            rows={3}
             style={{ resize: 'vertical' }}
           ></textarea>
         </div>

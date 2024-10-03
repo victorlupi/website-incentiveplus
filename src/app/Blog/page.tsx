@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import Header from '../components/Header';
+import HeaderBranco from '../components/HeaderBranco';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../components/Footer';
@@ -38,58 +38,13 @@ const Page = () => {
 
     const displayedCards = cards.slice((currentPage - 1) * 6, currentPage * 6);
 
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
 
     return (
         <>
+        <Link href='/'>
             <Image src='/images/logo3.png' width={160} height={100} alt='Logo' className='absolute top-5 left-[45px] lg:left-[140px]' />
-            <header className="text-incentive-blue p-4 absolute top-0 right-[80px] lg:right-[140px] w-2/2 z-30">
-                <div className="mx-auto flex justify-between items-right">
-                    {/* Botão do Menu Hamburger */}
-                    <button
-                        className="md:hidden focus:outline-none text-black absolute top-[30px] right-[-35px]"
-                        onClick={toggleMenu}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                        
-                    </button>
-
-        
-                   {/* Menu */}
-                    <nav className={`md:flex md:items-center w-full md:w-auto ${isOpen ? 'fixed top-0 left-0 w-full h-full bg-incentive-blue  z-40' : 'hidden'}`}>
-                        <div className="absolute top-4 right-4">
-                            <button
-                                onClick={toggleMenu}
-                                className="md:hidden text-red-500 border px-2 rounded-full text-3xl focus:outline-none"
-                            >
-                                &times; {/* Ícone de fechar */}
-                            </button>
-                        </div>
-                        <ul className={`flex flex-col items-center justify-center h-full space-y-4 ${isOpen ? '' : 'hidden'}`}>
-                            <li>
-                                <Link href="/Incentivo" className="block text-white text-2xl hover:text-blue-200">Marketing<br />de Incentivo</Link>
-                            </li>
-                            <li>
-                                <Link href="https://incentivecuidandodevidas.incentiveplus.com.br/" className="block text-white text-2xl hover:text-blue-200">Cuidando<br />de Vida</Link>
-                            </li>
-                            <li>
-                                <Link href="/Blog" className="block text-white text-2xl hover:text-blue-200">Blog</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Sobre Nós</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="block text-white text-2xl hover:text-blue-200">Contato</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+        </Link>
+            <HeaderBranco textColor='black' />
 
             <div className='relative w-full'>
                 <Image src="/images/blog.png" alt="Logo" width={1047} height={395} className="w-[80%] h-[395px] mx-auto pt-20" />
@@ -98,42 +53,42 @@ const Page = () => {
                     <p className='mt-2'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                 </div>
             </div>
-            <div className='flex  '>
-                <div className='flex flex-wrap justify-center gap-4 p-4 w-full lg:w-[75%]'>
+            <div className='flex '>
+                <div className='flex flex-wrap justify-center gap-4 pt-4 w-full lg:w-[75%] pl-20'>
                     {displayedCards.map(card => (
                         <Link key={card.id} href={`/Blog/${card.id}`}>
                             <div key={card.id} className='bg-white shadow-lg rounded-lg overflow-hidden w-60'>
-                                <Image src={card.imageSrc} alt={card.title} width={256} height={144} className="w-full h-36 object-cover" />
+                                <Image src={card.imageSrc} alt={card.title} width={224} height={144} className="w-full h-36 object-cover" />
                                 <div className='p-4'>
                                     <h2 className='font-bold text-lg'>{card.title}</h2>
                                     <p className='text-gray-600'>{card.description}</p>
                                 </div>
                             </div>
-                            </Link>
+                        </Link>
                     ))}
 
-                            <div className='flex justify-center items-center mt-6'>
-                                <button onClick={handlePrevPage} disabled={currentPage === 1} className='px-4 py-2 bg-white text-black border rounded-l'>
-                                    &#10094;
-                                </button>
-                                <span className='px-4'>{`Página ${currentPage} de ${totalPages}`}</span>
-                                <button onClick={handleNextPage} disabled={currentPage === totalPages} className='px-4 py-2 bg-white text-black border rounded-r'>
-                                    &#10095;
-                                </button>
-                            </div>
+                    <div className='flex justify-center items-center mt-6'>
+                        <button onClick={handlePrevPage} disabled={currentPage === 1} className='px-4 py-2 bg-white text-black border rounded-l'>
+                            &#10094;
+                        </button>
+                        <span className='px-4'>{`Página ${currentPage} de ${totalPages}`}</span>
+                        <button onClick={handleNextPage} disabled={currentPage === totalPages} className='px-4 py-2 bg-white text-black border rounded-r'>
+                            &#10095;
+                        </button>
+                    </div>
 
 
-                        </div>
-                {/* Card adicional no espaço da direita em telas grandes */ }
-                        < div className = 'hidden lg:block w-[25%] h-[200px] pt-14 pr-[120px]' >
-                        <div className='flex flex-col gap-2 bg-white shadow-lg rounded-lg overflow-hidden p-6'> {/* Adicionei p-4 aqui */}
-                            <button disabled className='px-2 py-2 bg-white text-black border border-black rounded-3xl'>Crowdfunding</button>
-                            <button disabled className='px-2 py-2 bg-white text-black border border-black rounded-3xl'>Marketing de Incentivo</button>
-                            <button disabled className='px-2 py-2 bg-white text-black border border-black rounded-3xl'>Investimento</button>
-                            <button disabled className='px-2 py-2 bg-white text-black border border-black rounded-3xl'>Saúde e bem-estar</button>
-                            <button disabled className='px-2 py-2 bg-white text-black border border-black rounded-3xl'>Empresarial</button>
-                            <button disabled className='px-2 py-2 bg-white text-black border border-black rounded-3xl'>Tecnologia</button>
-                        </div>
+                </div>
+                {/* Card adicional no espaço da direita em telas grandes */}
+                < div className='hidden lg:block w-[15%] h-[200px] pt-14 pr-[6px]' >
+                    <div className='flex flex-col gap-2 bg-white shadow-lg rounded-lg overflow-hidden p-2 text-xs'> {/* Adicionei p-4 aqui */}
+                        <button disabled className='px-1 py-2 bg-white text-black border border-black rounded-3xl'>Crowdfunding</button>
+                        <button disabled className='px-1 py-2 bg-white text-black border border-black rounded-3xl'>Marketing de Incentivo</button>
+                        <button disabled className='px-1 py-2 bg-white text-black border border-black rounded-3xl'>Investimento</button>
+                        <button disabled className='px-1 py-2 bg-white text-black border border-black rounded-3xl'>Saúde e bem-estar</button>
+                        <button disabled className='px-1 py-2 bg-white text-black border border-black rounded-3xl'>Empresarial</button>
+                        <button disabled className='px-1 py-2 bg-white text-black border border-black rounded-3xl'>Tecnologia</button>
+                    </div>
                 </div>
 
 

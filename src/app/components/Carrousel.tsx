@@ -49,26 +49,20 @@ const Carrossel = () => {
 
     return (
         <div className="relative w-full max-w-full mx-auto overflow-hidden ">
-            {/* <Image src='/images/logo3.png' alt="logo" width={200} height={200} className="w-[100px] md:w-[200px] absolute inset-0 z-[200] left-4 top-4" /> */}
+            <Image src='/images/logo3.png' alt="logo" width={200} height={200} className="w-[100px] md:w-[200px] absolute inset-0 z-[200] left-[80px] top-4" />
             <Header
-                logoSrc="/images/logo3.png"
                 textColor="text-white"
-                
             />
             <div className="flex transition-transform ease-out duration-500 text-[rgb(1,24,74)]" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {banners.map((banner, index) => (
                     <div key={index} className="min-w-full h-[500px] relative bg-[rgb(255,255,255)]">
-                        {/* <img
-                            src={banner.image}
-                            alt={banner.title}
-                            className="w-full h-auto object-cover"
-                        /> */}
+                       
                         <div className="absolute inset-0 " />
                         <div className={`absolute w-full md:w-1/2 inset-0 flex flex-col items-center md:items-start justify-center md:text-left`}>
                             <p className="px-4 text-2xl  ml-6 md:ml-14 lg:ml-20 xl:ml-[120px] md:leading-[1.2] pb-[200px] md:pb-0 md:text-4xl text-[rgb(1,24,74)] z-10 ">{banner.description}</p>
                         </div>
                         <div className="flex-1 md:flex-shrink-0 hidden md:block">
-                            <img
+                            <Image
                                 src={banner.imageLarge}
                                 alt={banner.title}
                                 className="w-full h-[500px] object-cover"
@@ -77,7 +71,7 @@ const Carrossel = () => {
 
                         {/* Imagem para telas pequenas */}
                         <div className="md:hidden">
-                            <img
+                            <Image
                                 src={banner.imageSmall}
                                 alt={banner.title}
                                 className="w-full h-[300px] object-cover mt-[300px] bg-right"
